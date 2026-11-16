@@ -1,0 +1,379 @@
+﻿
+<Window x:Class="TikTokWpfCollector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TikTok Collector"
+        Height="850"
+        Width="1350"
+        MinHeight="700"
+        MinWidth="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="#0D0F16"
+        Foreground="#F1F1F7"
+        FontFamily="Segoe UI">
+
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="BackgroundBrush" Color="#0D0F16"/>
+        <SolidColorBrush x:Key="PanelBrush" Color="#151824"/>
+        <SolidColorBrush x:Key="PanelLightBrush" Color="#1D2130"/>
+        <SolidColorBrush x:Key="AccentBrush" Color="#9B6DFF"/>
+        <SolidColorBrush x:Key="MutedBrush" Color="#85899E"/>
+
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="#282D40"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="18,11"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                                CornerRadius="9"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.85"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.4"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#202435"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="12,9"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="CaretBrush" Value="White"/>
+        </Style>
+
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="#151824"/>
+            <Setter Property="Foreground" Value="#E9E9F2"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="GridLinesVisibility" Value="None"/>
+            <Setter Property="HeadersVisibility" Value="Column"/>
+            <Setter Property="RowBackground" Value="#151824"/>
+            <Setter Property="AlternatingRowBackground" Value="#191D2A"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="RowHeight" Value="42"/>
+            <Setter Property="ColumnHeaderHeight" Value="42"/>
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#202435"/>
+            <Setter Property="Foreground" Value="#AEB2C5"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="12,0"/>
+        </Style>
+
+        <Style TargetType="DataGridCell">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="28">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="190"/>
+        </Grid.RowDefinitions>
+
+        <!-- HEADER -->
+        <Grid Grid.Row="0" Margin="0,0,0,25">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <TextBlock Text="TIKTOK COLLECTOR"
+                           FontSize="25"
+                           FontWeight="Bold"
+                          />
+
+                <TextBlock Text="Сбор и анализ профилей TikTok"
+                           Foreground="{StaticResource MutedBrush}"
+                           FontSize="13"
+                           Margin="0,5,0,0"/>
+            </StackPanel>
+
+            <Border Grid.Column="1"
+                    Background="#1B2030"
+                    CornerRadius="20"
+                    Padding="15,8"
+                    VerticalAlignment="Center">
+                <StackPanel Orientation="Horizontal">
+                    <Ellipse Width="8" Height="8"
+                             Fill="#777D91"
+                             Margin="0,0,9,0"/>
+                    <TextBlock x:Name="StatusText"
+                               Text="Ожидание запуска"
+                               Foreground="#B7BBD0"
+                               FontSize="12"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- STATISTICS -->
+        <Grid Grid.Row="1" Margin="0,0,0,20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0"
+                    Background="{StaticResource PanelBrush}"
+                    CornerRadius="13"
+                    Padding="20"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="ОБРАБОТАНО ПРОФИЛЕЙ"
+                               Foreground="{StaticResource MutedBrush}"
+                               FontSize="10"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="ProfilesCountText"
+                               Text="0"
+                               FontSize="29"
+                               FontWeight="Bold"
+                               Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1"
+                    Background="{StaticResource PanelBrush}"
+                    CornerRadius="13"
+                    Padding="20"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="TELEGRAM"
+                               Foreground="{StaticResource MutedBrush}"
+                               FontSize="10"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="TelegramCountText"
+                               Text="0"
+                               FontSize="29"
+                               FontWeight="Bold"
+                               Foreground="#55D6A5"
+                               Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="2"
+                    Background="{StaticResource PanelBrush}"
+                    CornerRadius="13"
+                    Padding="20"
+                    Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="EMAIL"
+                               Foreground="{StaticResource MutedBrush}"
+                               FontSize="10"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="EmailCountText"
+                               Text="0"
+                               FontSize="29"
+                               FontWeight="Bold"
+                               Foreground="#70A7FF"
+                               Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="3"
+                    Background="{StaticResource PanelBrush}"
+                    CornerRadius="13"
+                    Padding="20">
+                <StackPanel>
+                    <TextBlock Text="НАЙДЕНО КОНТАКТОВ"
+                               Foreground="{StaticResource MutedBrush}"
+                               FontSize="10"
+                               FontWeight="SemiBold"/>
+                    <TextBlock x:Name="ContactsCountText"
+                               Text="0"
+                               FontSize="29"
+                               FontWeight="Bold"
+                               Foreground="{StaticResource AccentBrush}"
+                               Margin="0,8,0,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+        <!-- SETTINGS -->
+        <Border Grid.Row="2"
+                Background="{StaticResource PanelBrush}"
+                CornerRadius="13"
+                Padding="20"
+                Margin="0,0,0,20">
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.2*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0" Margin="0,0,15,0">
+                    <TextBlock Text="ЦЕЛЬ ПО КОНТАКТАМ"
+                               Foreground="{StaticResource MutedBrush}"
+                               FontSize="10"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,8"/>
+                    <TextBox x:Name="TargetContactsBox"
+                             Text="100"
+                             VerticalContentAlignment="Center"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="0,0,15,0">
+                    <TextBlock Text="ПАПКА СОХРАНЕНИЯ"
+                               Foreground="{StaticResource MutedBrush}"
+                               FontSize="10"
+                               FontWeight="SemiBold"
+                               Margin="0,0,0,8"/>
+                    <TextBox x:Name="ExcelPathBox"
+                             Text="TikTok_Results.xlsx"
+                             VerticalContentAlignment="Center"/>
+                </StackPanel>
+
+                <Button x:Name="StartButton"
+                        Grid.Column="2"
+                        Content="▶  ЗАПУСТИТЬ"
+                        Background="#8658E8"
+                        Padding="20,12"
+                        Margin="0,22,10,0"
+                        Click="StartButton_Click"/>
+
+                <Button x:Name="StopButton"
+                        Grid.Column="3"
+                        Content="■  ОСТАНОВИТЬ"
+                        Background="#B94C62"
+                        Padding="20,12"
+                        Margin="0,22,10,0"
+                        IsEnabled="False"
+                        Click="StopButton_Click"/>
+
+                <Button x:Name="OpenExcelButton"
+                        Grid.Column="4"
+                        Content="ОТКРЫТЬ EXCEL"
+                        Background="#282D40"
+                        Padding="20,12"
+                        Margin="0,22,0,0"
+                        Click="OpenExcelButton_Click"/>
+            </Grid>
+        </Border>
+
+        <!-- BLOGGERS TABLE -->
+        <Border Grid.Row="3"
+                Background="{StaticResource PanelBrush}"
+                CornerRadius="13"
+                Padding="18"
+                Margin="0,0,0,20">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid Margin="0,0,0,15">
+                    <TextBlock Text="СОБРАННЫЕ ПРОФИЛИ"
+                               FontSize="12"
+                               FontWeight="Bold"
+                               />
+
+                    <TextBlock x:Name="TableCountText"
+                               Text="0 записей"
+                               Foreground="{StaticResource MutedBrush}"
+                               HorizontalAlignment="Right"
+                               FontSize="11"/>
+                </Grid>
+
+                <DataGrid x:Name="BloggersGrid"
+                          Grid.Row="1"
+                          ItemsSource="{Binding Bloggers}"
+                          AlternationCount="2">
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="USERNAME"
+                                            Binding="{Binding Username}"
+                                            Width="140"/>
+
+                        <DataGridTextColumn Header="ПРОФИЛЬ"
+                                            Binding="{Binding ProfileUrl}"
+                                            Width="2*"/>
+
+                        <DataGridTextColumn Header="TELEGRAM"
+                                            Binding="{Binding Telegram}"
+                                            Width="150"/>
+
+                        <DataGridTextColumn Header="EMAIL"
+                                            Binding="{Binding Email}"
+                                            Width="180"/>
+
+                        <DataGridTextColumn Header="ПОДПИСЧИКИ"
+                                            Binding="{Binding Followers}"
+                                            Width="110"/>
+
+                        <DataGridTextColumn Header="BIO"
+                                            Binding="{Binding Bio}"
+                                            Width="2*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Border>
+
+        <!-- LOG -->
+        <Border Grid.Row="4"
+                Background="{StaticResource PanelBrush}"
+                CornerRadius="13"
+                Padding="18">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="ЖУРНАЛ РАБОТЫ"
+                           FontSize="11"
+                           FontWeight="Bold"
+                          
+                           Margin="0,0,0,12"/>
+
+                <ScrollViewer Grid.Row="1"
+                              VerticalScrollBarVisibility="Auto">
+                    <TextBlock x:Name="LogText"
+                               Text="Приложение готово к работе..."
+                               Foreground="#A7ABC0"
+                               FontFamily="Consolas"
+                               FontSize="11"
+                               TextWrapping="Wrap"/>
+                </ScrollViewer>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

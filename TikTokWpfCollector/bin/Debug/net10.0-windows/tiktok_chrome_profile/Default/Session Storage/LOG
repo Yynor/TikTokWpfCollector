@@ -1,0 +1,40 @@
+2026/11/16-23:01:14.577 5bcc Creating DB C:\Users\Админ\RiderProjects\TikTokWpfCollector\TikTokWpfCollector\bin\Debug\net10.0-windows\tiktok_chrome_profile\Default\Session Storage since it was missing.
+2026/11/16-23:01:14.603 5bcc Reusing MANIFEST C:\Users\Админ\RiderProjects\TikTokWpfCollector\TikTokWpfCollector\bin\Debug\net10.0-windows\tiktok_chrome_profile\Default\Session Storage/MANIFEST-000001
+2026/11/16-23:06:04.043 45ec Level-0 table #5: started
+2026/11/16-23:06:04.050 45ec Level-0 table #5: 18367 bytes OK
+2026/11/16-23:06:04.052 45ec Delete type=0 #3
+2026/11/16-23:08:15.486 5bcc Level-0 table #7: started
+2026/11/16-23:08:15.492 5bcc Level-0 table #7: 16368 bytes OK
+2026/11/16-23:08:15.493 5bcc Delete type=0 #4
+2026/11/16-23:11:15.485 5bcc Level-0 table #9: started
+2026/11/16-23:11:15.491 5bcc Level-0 table #9: 16014 bytes OK
+2026/11/16-23:11:15.494 5bcc Delete type=0 #6
+2026/11/16-23:13:35.640 45ec Level-0 table #11: started
+2026/11/16-23:13:35.646 45ec Level-0 table #11: 15952 bytes OK
+2026/11/16-23:13:35.648 45ec Delete type=0 #8
+2026/11/16-23:15:50.335 45ec Level-0 table #13: started
+2026/11/16-23:15:50.341 45ec Level-0 table #13: 16374 bytes OK
+2026/11/16-23:15:50.343 45ec Delete type=0 #10
+2026/11/16-23:18:15.957 45ec Level-0 table #15: started
+2026/11/16-23:18:15.963 45ec Level-0 table #15: 15948 bytes OK
+2026/11/16-23:18:15.965 45ec Delete type=0 #12
+2026/11/16-23:18:15.966 45ec Compacting 4@0 + 1@1 files
+2026/11/16-23:18:15.975 45ec Generated table #16@0: 1853 keys, 32402 bytes
+2026/11/16-23:18:15.975 45ec Compacted 4@0 + 1@1 files => 32402 bytes
+2026/11/16-23:18:15.975 45ec compacted to: files[ 0 1 1 0 0 0 0 ]
+2026/11/16-23:18:15.977 45ec Delete type=2 #7
+2026/11/16-23:18:15.977 45ec Delete type=2 #9
+2026/11/16-23:18:15.977 45ec Delete type=2 #11
+2026/11/16-23:18:15.977 45ec Delete type=2 #13
+2026/11/16-23:18:15.977 45ec Delete type=2 #15
+2026/11/16-23:20:39.044 45ec Level-0 table #18: started
+2026/11/16-23:20:39.052 45ec Level-0 table #18: 16262 bytes OK
+2026/11/16-23:20:39.054 45ec Delete type=0 #14
+2026/11/16-23:23:15.482 5bcc Level-0 table #20: started
+2026/11/16-23:23:15.487 5bcc Level-0 table #20: 16023 bytes OK
+2026/11/16-23:23:15.488 5bcc Delete type=0 #17
+2026/11/16-23:25:59.880 45ec Level-0 table #22: started
+2026/11/16-23:25:59.887 45ec Level-0 table #22: 15802 bytes OK
+2026/11/16-23:25:59.888 45ec Delete type=0 #19
+2026/11/16-23:27:38.456 5f4c Level-0 table #24: started
+2026/11/16-23:27:38.462 5f4c Level-0 table #24: 14437 bytes OK

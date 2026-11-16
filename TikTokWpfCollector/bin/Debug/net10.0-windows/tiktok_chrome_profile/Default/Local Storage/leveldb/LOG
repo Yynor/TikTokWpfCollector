@@ -1,0 +1,16 @@
+2026/11/16-23:01:14.415 5bcc Creating DB C:\Users\Админ\RiderProjects\TikTokWpfCollector\TikTokWpfCollector\bin\Debug\net10.0-windows\tiktok_chrome_profile\Default\Local Storage\leveldb since it was missing.
+2026/11/16-23:01:14.436 5bcc Reusing MANIFEST C:\Users\Админ\RiderProjects\TikTokWpfCollector\TikTokWpfCollector\bin\Debug\net10.0-windows\tiktok_chrome_profile\Default\Local Storage\leveldb/MANIFEST-000001
+2026/11/16-23:06:59.501 45ec Level-0 table #5: started
+2026/11/16-23:06:59.512 45ec Level-0 table #5: 276465 bytes OK
+2026/11/16-23:06:59.514 45ec Delete type=0 #3
+2026/11/16-23:10:15.476 45ec Level-0 table #7: started
+2026/11/16-23:10:15.483 45ec Level-0 table #7: 25095 bytes OK
+2026/11/16-23:10:15.485 45ec Delete type=0 #4
+2026/11/16-23:16:15.481 45ec Level-0 table #9: started
+2026/11/16-23:16:15.486 45ec Level-0 table #9: 25404 bytes OK
+2026/11/16-23:16:15.487 45ec Delete type=0 #6
+2026/11/16-23:22:15.491 45ec Level-0 table #11: started
+2026/11/16-23:22:15.498 45ec Level-0 table #11: 25473 bytes OK
+2026/11/16-23:22:15.501 45ec Delete type=0 #8
+2026/11/16-23:27:38.442 5f4c Level-0 table #13: started
+2026/11/16-23:27:38.456 5f4c Level-0 table #13: 25004 bytes OK
